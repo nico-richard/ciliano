@@ -1,0 +1,33 @@
+@import "tailwindcss"
+
+:root
+  --color-background: #1f1f1f
+  --color-text: #ffffff
+  --color-text-blue: #3553d0
+
+
+body
+  font-family: rajdhani, sans-serif
+  background-color: var(--color-background)
+  color: var(--color-text)
+
+@layer components
+  .ci-button
+    @apply bg-yellow-800
+    padding: 10px 20px
+    border-radius: 5px
+    cursor: pointer
+    transition: 0.2s
+
+    &:hover
+      @apply bg-yellow-900
+
+  .ci-page-header
+    font-size: 3rem
+    margin: 5rem 0
+    text-align: center
+
+  .ci-link
+    @apply hover:text-yellow-800
+    transition: 0.2s
+    font-size: 1.2rem
