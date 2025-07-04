@@ -1,3 +1,5 @@
+import Calendar from '@/components/Calendar'
+
 export default function BookPage() {
   return (
     <div>
@@ -18,6 +20,7 @@ export default function BookPage() {
         transgressi inopino adcursu adposita quaeque vastare, sed in cassum labores pertulere
         gravissimos.
       </p>
+      <Calendar></Calendar>
     </div>
   )
 }
