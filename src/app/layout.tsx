@@ -22,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={rajdhani.variable}>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">{children}</main>

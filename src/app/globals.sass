@@ -1,26 +1,33 @@
 @import "tailwindcss"
+@import "tailwindcss/utilities"
 
 :root
-  --color-background: #1f1f1f
-  --color-text: #ffffff
+  --color-background: #eec888
+  --color-logo-red: #bb3f0f
+  --color-logo-green: #536635
   --color-text-blue: #3553d0
+  --color-text-dark-blue: #111a50
+  --color-text-white: #ffffff
 
-
-body
-  font-family: rajdhani, sans-serif
-  background-color: var(--color-background)
-  color: var(--color-text)
+@layer base
+  body
+    font-family: rajdhani, sans-serif
+    background-color: var(--color-background)
+    color: var(--color-text-dark-blue)
 
 @layer components
   .ci-button
-    @apply bg-yellow-800
+    color: var(--color-background)
+    background-color: var(--color-logo-red)
     padding: 10px 20px
     border-radius: 5px
     cursor: pointer
-    transition: 0.2s
+    transition: all 0.2s
+    font-weight: 600
 
     &:hover
-      @apply bg-yellow-900
+      transform: scale(1.05)
+      filter: brightness(120%)
 
   .ci-page-header
     font-size: 3rem
@@ -28,6 +35,26 @@ body
     text-align: center
 
   .ci-link
-    @apply hover:text-yellow-800
-    transition: 0.2s
+    display: inline-block
+    position: relative
+    text-align: center
     font-size: 1.2rem
+    font-weight: normal
+    transition: 0.2s
+    min-width: max-content
+
+    &::after
+      content: ''
+      position: absolute
+      width: 100%
+      transform: scaleX(0)
+      height: 1px
+      bottom: 0
+      left: 0
+      background-color: var(--color-text-dark-blue)
+      transition: transform 0.25s ease-out
+      transform-origin: bottom center
+
+    &:hover::after
+      transform: scaleX(1)
+      transform-origin: bottom center
